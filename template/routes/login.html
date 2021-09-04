@@ -1,0 +1,44 @@
+{% extends 'components/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="login-container">
+        <form method="POST">
+            {% if messages %}
+            {% for message in messages %}
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+                    <div id="message-error">{{ message }}</div>
+                {% endif %}
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                    <div id="message-success">{{ message }}</div>
+                {% endif %}
+            {% endfor %}
+            {% endif %}
+
+            {% csrf_token %}
+            <div class="form-header">
+                <h2>Login to <span class="color-base">Your Account</span></h2>
+                <p>Choose from 3000+ jobs with new jobs posted every day.</p>
+                <div class="divider"></div>
+            </div>
+            <div class="input-field">
+                <input type="text" placeholder="Your username*" name="username">
+                <img src="{% static 'icons/person_black_24dp.svg' %}" alt="">
+            </div>
+            <div class="input-field">
+                <input type="password" name="password" placeholder="Your password*">
+                <img src="{% static 'icons/lock_black_24dp.svg' %}" alt="">
+            </div>
+            <div class="input-field">
+                <button type="submit" class="btn-login">Login</button>
+                <img src="{% static 'icons/arrow_forward_black_24dp.svg' %}" class="img" alt="">
+            </div>
+            <div class="input-field">
+                <a class="btn-login" href="{% url 'forget-passsword' %}">Forgot password</a>
+            </div>
+        </form>
+    </div>
+    
+    {% endblock %}
+    
+</body>
+</html>

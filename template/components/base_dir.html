@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jobberx</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/singlePage.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/db.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/auth.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/db-mobile.css' %}" />
+
+    <script defer src="js/db.js"></script>
+  </head>
+  <body>
+    <div class="db">
+      <div class="app-sidebar">
+        <div class="app-logo">
+          <h2>Jobberx</h2>
+        </div>
+        <ul class="app-lists">
+          <li><a class="active-nav" href="{% url 'job' %}">Dashboard</a></li>
+          <li><a href="{% url 'saved-jobs' %}">My jobs</a></li>
+          <li><a id="notification-modal">notifications</a></li>
+          <li><a href="{% url 'profile' %}">Profile</a></li>
+          <li><a href="{% url 'logout' %}">Logout</a></li>
+        </ul>
+      </div>
+      <!-- End Sidebar -->
+      {% block content %} {% endblock %} {% include'components/base_footer.html'
+      %}
+    </div>
+  </body>
+</html>

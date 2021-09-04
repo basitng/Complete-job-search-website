@@ -1,0 +1,57 @@
+{% extends 'components/base.html' %} {% load static %} 
+{% block content %}
+{% load widget_tweaks %}
+<div class="signup-container">
+    <form action="" method="POST" autocomplete="off">
+      {% csrf_token %}
+     {% if messages %}
+    {% for message in messages %} 
+    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+    <div id="message-error">{{ message }}</div>
+    {% endif %} 
+    {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+    <div id="message-success">{{ message }}</div>
+    {% endif %} 
+    {% endfor %} 
+    {% endif %} 
+    <div class="form-header">
+        
+      <h2>Signup For <span class="color-base">A New Account</span></h2>
+      <p>Choose from 3000+ jobs with new jobs posted every day.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="input-field">
+      {% render_field form.username type="text" placeholder="Username*" %}
+      <img src="{% static 'icons/badge_black_24dp.svg' %}" alt="" />
+    </div>
+    <div class="input-field">
+      {% render_field form.email type="email" placeholder="Email address*" %}
+      <img src="{% static 'icons/email_black_24dp.svg' %}" alt="" />
+    </div>
+    <div class="input-field">
+      {% render_field form.password1 id="password-validator" type="password" placeholder="Create password*" %}
+      <img src="{% static 'icons/lock_black_24dp.svg' %}" alt="" />
+      <div id="progress">
+        <div class="progress"></div>
+        <div class="progress"></div>
+        <div class="progress"></div>
+      </div>
+    </div>
+    <div class="input-field">
+      {% render_field form.password2 id="password-validator" type="password" placeholder="Confirm password *" %}
+      <img src="{% static 'icons/lock_black_24dp.svg' %}" alt="" />
+    </div>
+    <div class="input-field">
+      <button type="submit" class="btn-signup">Signup</button>
+      <img
+        src="{% static 'icons/arrow_forward_black_24dp.svg' %}"
+        class="img"
+        alt=""
+      />
+    </div>
+    <div class="input-field">
+      <a class="btn-login" href="{ url 'login' %}">Login instead</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

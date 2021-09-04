@@ -1,0 +1,201 @@
+{% extends 'components/base.html' %} {% load static %} {% block content %}
+<div class="banner" id="home">
+  <div class="caption">
+    <div class="caption-text">
+      <h1>New <span class="color-base">offers</span> are waiting for you</h1>
+      <span>Find a new job</span>
+    </div>
+    <div class="mobile-button">
+      <a class="btn" href="login.html">Login</a>
+    </div>
+    <div class="caption-search-bar">
+      <form method="POST">
+        <input type="text" name="search" placeholder="Job title or keyword" />
+        <button type="submit" class="btn search-btn">Search</button>
+      </form>
+    </div>
+    <div class="social-blocks">
+      <p>Follow us-</p>
+      <div class="social-icons">
+        <img src="{% static 'icons/svg/002-facebook.svg' %}" alt="" />
+        <img src="{% static 'icons/svg/001-twitter.svg' %}" alt="" />
+        <img src="{% static 'icons/svg/003-instagram.svg' %}" alt="" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT US SECTION -->
+<div class="container" id="about">
+  <center>
+    <div class="about-header">
+      <h1>
+        We provide high recognized and well paid jobs for all United States
+        citizens
+      </h1>
+      <p>
+        We provide our users the best paying and good cultured company that we
+        satisfy them. Get well paid jobs just by searching and applying for any
+        available jobs near your satisfatory loacations.
+      </p>
+    </div>
+  </center>
+  <div class="flex">
+    <div class="card">
+      <span class="number">15,000+</span>
+      <p class="legend">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. At ratione
+        mollitia nihil molestias aperiam quas placeat, consectetur eum.
+        Obcaecati, nobis.
+      </p>
+    </div>
+    <div class="card">
+      <span class="number">30,000+</span>
+      <p class="legend">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. At ratione
+        mollitia nihil molestias aperiam quas placeat, consectetur eum.
+        Obcaecati, nobis.
+      </p>
+    </div>
+    <div class="card">
+      <span class="number">100+</span>
+      <p class="legend">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. At ratione
+        mollitia nihil molestias aperiam quas placeat, consectetur eum.
+        Obcaecati, nobis.
+      </p>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="block1">
+    <div class="header">
+      <div class="head">
+        <h1>Top careers on our platform</h1>
+      </div>
+      <p>
+        They are thousands of well paid professional careers on it's platform.
+        Tips for getting good jobs
+      </p>
+    </div>
+    <ul>
+      <li>Availability of SSN</li>
+      <li>Good cv</li>
+      <li>National ID Card</li>
+      <li>Williness & seriousness to get the job</li>
+    </ul>
+  </div>
+  <div class="block2">
+    <img src="{% static 'image/Humaaans - 3 Characters.png' %}" alt="" />
+  </div>
+</section>
+
+<div class="get-hired-container">
+  <div class="get-hired-content">
+    <h2>Get hired now.</h2>
+    <div class="divider"></div>
+    <p class="lead">
+      Enroll for the 10,000+ well culture and highly paid companies all over in
+      US, we are in this together and will shall overcome it.
+    </p>
+    <a href="{% url 'job' %}" class="btn btn-enroll">Get hired</a>
+  </div>
+</div>
+<div class="newsletter-container">
+  <div class="newsletter-content">
+    <h2>Subscribe to <span class="color-base">Newsletter</span></h2>
+    <p>Don't we won't burn you with spam :)</p>
+  </div>
+  <form method="POST">
+    <input type="email" placeholder="Your email address" />
+    <button class="btn newsletter-btn">Subscribe</button>
+  </form>
+</div>
+<div class="testimonies-container" id="testimonies">
+  <div class="content">
+    <h2>What people say about us</h2>
+  </div>
+  <div class="flex-cards">
+    <div class="card">
+      <div class="card-image">
+        <img
+          id="{% static 'image"
+          src="{% static 'image/avatar/avatar1.jpg' %}"
+          alt=""
+        />
+      </div>
+      <span class="card-title">Software development</span>
+      <span class="card-company">Facebook</span>
+      <p>
+        These platform is among the best platforms i ever come across is so easy
+        to use with amazing user interface.
+      </p>
+      <div class="divider"></div>
+      <span class="card-username">Steven Jomah</span>
+    </div>
+    <!-- End card -->
+    <div class="card">
+      <div class="card-image">
+        <img
+          id="{% static 'image"
+          src="{% static 'image/avatar/avatar2.jpg' %}"
+          alt=""
+        />
+      </div>
+      <span class="card-title">Accountant</span>
+      <span class="card-company">Amazon</span>
+      <p>
+        These platform is among the best platforms i ever come across is so easy
+        to use with amazing user interface.
+      </p>
+      <div class="divider"></div>
+      <span class="card-username">Stellah James</span>
+    </div>
+    <!-- End card -->
+    <div class="card">
+      <div class="card-image">
+        <img
+          id="{% static 'image"
+          src="{% static 'image/avatar/avatar3.jpg' %}"
+          alt=""
+        />
+      </div>
+      <span class="card-title">Business Analytics</span>
+      <span class="card-company">Troplets</span>
+      <p>
+        These platform is among the best platforms i ever come across is so easy
+        to use with amazing user interface.
+      </p>
+      <div class="divider"></div>
+      <span class="card-username">James Parker</span>
+    </div>
+  </div>
+</div>
+<!-- End Testimonies container -->
+
+<div class="contact-section">
+  <form method="post">
+    <div class="contact-header">
+      <h1>Contact Us</h1>
+      <p>
+        We are always here for you, have any questions ? Get in touch with us
+        for help
+      </p>
+    </div>
+    <div class="input-field">
+      <input type="text" placeholder="Your email address*" />
+    </div>
+    <div class="input-field">
+      <input type="text" placeholder="Phone number*" />
+    </div>
+    <div class="input-field">
+      <textarea placeholder="Your Message here" cols="30" rows="10"></textarea>
+    </div>
+    <div class="input-field">
+      <button type="submit" class="btn">Submit</button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}
